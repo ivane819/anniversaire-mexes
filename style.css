@@ -1,0 +1,499 @@
+/* Reset & Style Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff0f3;
+  color: #2b2d42;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Dancing Script", cursive;
+}
+
+:root {
+  --primary: #ff4d6d;
+  --primary-dark: #c9184a;
+  --secondary: #ffb3c1;
+  --bg-soft: #fff0f3;
+  --card-bg: #ffffff;
+  --text-dark: #2b2d42;
+}
+
+/* Écran de verrouillage (Mot de passe) */
+.lock-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff8fa3 0%, #ff4d6d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+.lock-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 350px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.lock-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.lock-card h2 {
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.lock-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.lock-input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.lock-input-group input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid var(--secondary);
+  border-radius: 30px;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+}
+
+.lock-input-group input:focus {
+  border-color: var(--primary);
+}
+
+.lock-input-group button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lock-input-group button:hover {
+  background-color: var(--primary-dark);
+}
+
+.error-msg {
+  color: #d90429;
+  font-size: 0.8rem;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Gestion d'affichage du contenu principal */
+.hidden-content {
+  display: none;
+}
+
+.fade-in {
+  display: block;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hero Section */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #ff8fa3 0%, #ff4d6d 100%);
+  color: white;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  margin: 15px 0;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #fff3b0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+.btn-primary {
+  background-color: white;
+  color: var(--primary-dark);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Global Sections Title */
+.section-title {
+  font-size: 2.8rem;
+  text-align: center;
+  color: var(--primary-dark);
+  margin-bottom: 5px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+/* Story Section */
+.story-section {
+  padding: 60px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--secondary);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.timeline-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--bg-soft);
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  padding: 18px 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1;
+}
+
+.timeline-content h3 {
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+/* Media Section */
+.media-section {
+  padding: 60px 20px;
+  background-color: #ffe5ec;
+}
+
+.media-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.media-card {
+  background: white;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.media-frame {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.media-frame img,
+.media-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+/* Letter Section */
+.letter-section {
+  padding: 60px 20px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.envelope-wrapper {
+  position: relative;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: var(--secondary);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.envelope:hover {
+  transform: translateY(-5px);
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+.flap {
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 110px solid var(--primary);
+  transform-origin: top;
+  transition:
+    transform 0.4s ease 0.2s,
+    z-index 0.2s;
+  top: 0;
+}
+
+.pocket {
+  border-left: 150px solid #ff8fa3;
+  border-right: 150px solid #ff8fa3;
+  border-bottom: 100px solid var(--primary-dark);
+  border-top: 100px solid transparent;
+  border-radius: 0 0 10px 10px;
+}
+
+.letter {
+  position: absolute;
+  background: white;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  transition: transform 0.5s ease;
+  overflow-y: auto;
+}
+
+.letter-text h3 {
+  color: var(--primary-dark);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.letter-text p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.2rem !important;
+  color: var(--primary-dark) !important;
+  text-align: right;
+  margin-top: 15px;
+}
+
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  z-index: 4;
+  transition: opacity 0.3s;
+}
+
+/* Animations Ouverture Lettre */
+.envelope-wrapper.open .flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope-wrapper.open .letter {
+  transform: translateY(-130px);
+  height: 280px;
+  z-index: 5;
+}
+
+.envelope-wrapper.open .heart {
+  opacity: 0;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+.footer p {
+  margin-bottom: 15px;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25d366;
+  color: white;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Animation des cœurs flottants */
+.floating-heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 1.5rem;
+  user-select: none;
+  pointer-events: none;
+  z-index: 999;
+  animation: floatUp linear forwards;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-105vh) rotate(360deg) scale(1.2);
+    opacity: 0;
+  }
+}

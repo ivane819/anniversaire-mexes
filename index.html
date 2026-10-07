@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joyeux Anniversaire Mexes ❤️</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+    <!-- Écran de Verrouillage / Mot de Passe -->
+    <div id="lock-screen" class="lock-screen">
+      <div class="lock-card">
+        <span class="lock-icon">🔒</span>
+        <h2>Zone sécurisée</h2>
+        <p>Entre le code secret pour accéder à ta surprise :</p>
+        <div class="lock-input-group">
+          <input
+            type="password"
+            id="password-input"
+            placeholder="Ton code secret..."
+          />
+          <button id="unlock-btn">Valider</button>
+        </div>
+        <p id="error-msg" class="error-msg">
+          Oups, ce n'est pas le bon code ! 😉
+        </p>
+      </div>
+    </div>
+
+    <!-- Contenu Principal (Masqué au départ) -->
+    <div id="main-content" class="hidden-content">
+      <!-- Hero Section -->
+      <header class="hero">
+        <div class="hero-content">
+          <span class="badge">Le 9 d'Octobre ✨</span>
+          <h1>
+            Joyeux Anniversaire <br /><span class="highlight">Mexes</span>
+          </h1>
+          <p class="subtitle">Une belle pensée pour ton jour spécial ❤️</p>
+          <button id="celebrate-btn" class="btn-primary">Fêter ça ! 🎉</button>
+        </div>
+      </header>
+
+      <!-- Section Notre Histoire -->
+      <section class="story-section">
+        <h2 class="section-title">Notre petit début 💫</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-icon">1</div>
+            <div class="timeline-content">
+              <h3>Les premiers échanges 😊</h3>
+              <p>
+                Quand on apprenait à se connaître et qu'on échangeait nos
+                premiers messages...
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon">2</div>
+            <div class="timeline-content">
+              <h3>Le rapprochement ✨</h3>
+              <p>
+                De fil en aiguille, une belle complicité est née entre nous.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon">3</div>
+            <div class="timeline-content">
+              <h3>Aujourd'hui ❤️</h3>
+              <p>
+                Un nouveau chapitre qui commence tout juste, et que j'ai hâte de
+                découvrir avec toi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Galerie : Photo & Vidéo -->
+      <section class="media-section">
+        <h2 class="section-title">À l'honneur aujourd'hui 👑</h2>
+        <p class="section-subtitle">Parce que c'est ta journée spéciale !</p>
+
+        <div class="media-container">
+          <!-- Sa Photo -->
+          <div class="media-card">
+            <div class="media-frame">
+              <img
+                src="./image/mexes.jpeg"
+                alt="Photo de Mexes"
+                id="user-photo"
+              />
+            </div>
+            <p class="caption">Joyeux anniversaire à toi ✨</p>
+          </div>
+
+          <!-- Sa Vidéo -->
+          <div class="media-card">
+            <div class="media-frame video-frame">
+              <video controls poster="video-thumbnail.jpg" id="user-video">
+                <source src="./video/mexes vido PM.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la lecture de vidéo.
+              </video>
+            </div>
+            <p class="caption">Toujours le sourire 🎥</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Enveloppe & Lettre -->
+      <section class="letter-section">
+        <h2 class="section-title">Une petite attention pour toi 💌</h2>
+        <p class="section-subtitle">
+          Clique sur l'enveloppe pour ouvrir la lettre
+        </p>
+
+        <div class="envelope-wrapper" id="envelope">
+          <div class="envelope">
+            <div class="front flap"></div>
+            <div class="front pocket"></div>
+            <div class="letter">
+              <div class="letter-text">
+                <h3>Coucou Mexes,</h3>
+                <p>Je te souhaite un très joyeux anniversaire ! 🎉</p>
+                <p>
+                  Même si notre histoire ne fait que commencer, je suis vraiment
+                  heureuse de ce qu'on partage. Je me dis qu'on s'est choisis et
+                  que c'est le début de quelque chose de très beau.
+                </p>
+                <p>
+                  J'espère sincèrement qu'on ira loin ensemble et que tu sauras
+                  prendre soin de nous... Ne me déçois pas, d'accord ? 😉
+                </p>
+                <p>
+                  Profite à fond de ta journée, que cette année t'apporte de la
+                  réussite, de la joie et beaucoup de beaux moments !
+                </p>
+                <p class="signature">Passe une belle journée bisous ❤️</p>
+              </div>
+            </div>
+            <div class="heart">❤️</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Fait spécialement pour toi baby 🎂</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
